@@ -7,23 +7,21 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'application', component: ApplicationComponent},
-  
-  {path:'register', component:RegisterComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'application', component: ApplicationComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', component: HomeComponent },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const myRoutings = [
-                  LoginComponent,
-                  HomeComponent,
-                  ApplicationComponent,
-                  
-                  RegisterComponent
-]
+  LoginComponent,
+  HomeComponent,
+  ApplicationComponent,
+  RegisterComponent,
+];

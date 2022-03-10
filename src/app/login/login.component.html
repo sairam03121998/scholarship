@@ -1,23 +1,27 @@
-<html lang="en">
-  <head>
-    <title>LOGIN</title>
-  </head>
-<body>
-  <div class="container">
-    <form action="">
-      <h1>Student Login</h1>
-      <div class="form-group">
-      <label for="">StudentID</label>
-      <input type="text" class="form-control" required>
+<div class="container">
+  <form [formGroup]="form">
+    <h1>Student Login</h1>
+    <div class="form-group">
+      <label for="username">StudentID</label>
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        formControlName="username"
+        id="username"
+      />
     </div>
     <div class="form-group">
-      <label for="">Password</label>
-      <input type="password"  class="form-control" required>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="Password"
+        form-control-name="password"
+        class="form-control"
+      />
     </div>
-    <input type="submit" class="btn" value="login">
-    <div class="Register">
-      Not a member?<a href="register">Register</a>
-   </div>
-      </form>
-  </div>
-</body>
+    <input (click)="login()" class="btn" value="login" />
+    <div class="Register">Not a member?<a href="register">Register</a></div>
+  </form>
+</div>
