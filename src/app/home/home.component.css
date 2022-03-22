@@ -1,7 +1,7 @@
 .card{
   border: 1px solid #333;
   border-radius: 0.5rem;
-  width: 70%;
+  width: 80%;
   margin: 0 auto ;
   border-radius: 10px;
   padding: 10px;
@@ -27,6 +27,16 @@ h3{
   justify-content: flex-end;
   display: flex;
   align-items: center;
+}
+
+.image{
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 600px;
+  background-image: url("https://imageio.forbes.com/specials-images/imageserve/5fb2d344abf7d301612e2395/Business-girl-holding-graduation-cap--Scholarship/960x0.jpg?fit=bounds&format=jpg&width=960");
+  background-repeat: no-repeat;
 }
 
 @media only screen and (max-width:720px){
