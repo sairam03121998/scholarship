@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { myRoutings } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    LoginComponent,
     myRoutings,
          RegisterComponent
   ],
