@@ -10,7 +10,36 @@
         formControlName="username"
         id="username"
       />
+
+      <div
+        *ngIf="
+          (username()?.touched || username()?.dirty) && username()?.invalid
+        "
+      >
+        <h6 class="alert text-danger" *ngIf="username()?.errors?.['required']">
+          Please Enter the Student ID.
+        </h6>
+        <h6
+          class="alert text-danger"
+          *ngIf="
+          username()?.errors?.['minlength'] ||
+          username()?.errors?.['maxlength']
+        "
+        >
+          Accepts 5 digit number
+        </h6>
+
+        <h6 class="alert text-danger" *ngIf=" username()?.errors?.['pattern']">
+          Only accepts numbers
+        </h6>
+
+        <!-- <h6 class="alert text-danger" *ngIf="username.errors.maxlength">
+        Accepts Alphabets, space & Min 5 to Max 30 Char
+      </h6> -->
+      </div>
     </div>
+
+    <br />
     <div class="form-group">
       <label for="password">Password</label>
       <input
