@@ -1,0 +1,35 @@
+table {
+    font-size: 20px;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      padding-left: 850px;
+    }
+    
+    td, th {
+      border: 1px solid black;
+      text-align: left;
+      padding: 12px;
+      text-align: center;
+      width:170px;
+    }
+    
+    tr:nth-child(even) {
+      background-color:#dad3f8 ;
+    }
+   
+      
+   /*button{
+    margin-left: 80%;
+  }*/
+  .heading
+    {
+      text-align: center;
+    margin-right: 25%;
+    padding-top: 5%;
+    padding-left: 400px;
+    }
+    .container{
+      margin-left:1%;
+      margin-right: 1%;
+    }

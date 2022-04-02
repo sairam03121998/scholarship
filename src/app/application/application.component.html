@@ -1,28 +1,48 @@
 <head>
-    <title>Application Form</title>
-  </head>
+  <title>Application Form</title>
+</head>
 <body>
-  <div class="container">
-    <form action="">
-      <h1>Apply Scholarship</h1>
-      <div class="form-group">
-      <label for="">Name</label>
-      <input type="text" class="form-control" required>
-    </div>
+<div class="container">
+  <form [formGroup] = "form" (ngSubmit)="submit()">
+    <h1>Apply Scholarship</h1>
     <div class="form-group">
-      <label for="">StudentID</label>
-      <input type="number" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="">10th Percentage</label>
-      <input type="number" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="">BE Percentage</label>
-      <input type="email" class="form-control" required>
-    </div>
-    
-    <input type="submit" class="btn" value="Apply">
-      </form>
+    <label for="Name">Name</label>
+    <input type="text" class="form-control"  formControlName="Name" id="Name"/>
+
+    <div  >
+     
+      <small *ngIf="f['Name'].invalid && f['Name'].touched" class="text-danger">Name is required !</small>
+
+    </div> 
   </div>
+
+  <div class="form-group">
+    <label for="">StudentID</label>
+    <input type="number" class="form-control" formControlName="StudentID" id="StudentID"/>
+    <div >
+     
+      <small *ngIf="f['StudentID'].invalid && f['StudentID'].touched" class="text-danger">StudentID is incorrect !</small>
+
+    </div> 
+</div>
+  <div class="form-group">
+    <label for="">10th Percentage(%)</label>
+    <input type="number" class="form-control" formControlName="ten" id="ten"/>
+    <div >
+      
+      <small *ngIf="f['ten'].invalid && f['ten'].touched" class="text-danger">tenth Percentage should be > 60%</small>
+   </div>
+  </div>
+  <div class="form-group">
+    <label for="">BE Percentage (CGPA)</label>
+    <input type="number" class="form-control" formControlName="BE" />
+    <div  >
+      
+      <small *ngIf="f['BE'].invalid && f['BE'].touched" class="text-danger">BE Percentage should be >=6.75 </small>
+   </div>
+  </div>
+  
+  <button [disabled]="form.invalid" class="btn">Apply</button>
+    </form>
+</div>
 </body>

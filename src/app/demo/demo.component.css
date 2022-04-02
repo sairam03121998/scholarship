@@ -1,6 +1,24 @@
-.form-control.ng-touched.ng-invalid {
-    border:1px solid red;
-   }
-   .form-control.ng-touched.ng-valid {
-    border:1px solid green;
-   }
+/* .container{
+    margin:auto;
+    width: 100px;
+    ;
+    
+} */
+/* .image{
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 40%;
+    height: 600px;
+    background-color: gray;
+    background-repeat: no-repeat;
+  } */
+  #abc{
+      padding-left: 500px;
+  }
+  
+  
+  
+
+
+

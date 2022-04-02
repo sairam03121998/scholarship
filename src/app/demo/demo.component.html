@@ -1,40 +1,33 @@
-<div class="container pt-5">
-  <div class="row justify-content-sm-center pt-5">
-    <div class="col-sm-6 shadow round pb-3">
-      <h1 class="text-center pt-3 text-secondary">Example Form</h1>
-      <form [formGroup]="exform">
-        <div class="form-group">
-          <label class="col-form-label">Name:</label>
-          <input formControlName="name" type="text" class="form-control" />
-          <!-- <small *ngIf="name.invalid && name.touched" class="text-danger">Name is Required</small>  -->
-        </div>
-        <div class="form-group">
-          <label class="col-form-label">Email:</label>
-          <input formControlName="email" type="text" class="form-control" />
-          <!-- <small *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</small> -->
-        </div>
-        <div class="form-group">
-          <label class="col-form-label">Phone:</label>
-          <input formControlName="phone" type="text" class="form-control" />
-          <!-- <small *ngIf="phone.invalid && phone.touched" class="text-danger"
-            >Phone no is Required(minimum length 10,numbers are only
-            allowed)</small>  -->
-        </div>
-        <div class="form-group">
-          <label class="col-form-label">Message:</label>
-          <textarea formControlName="message" class="form-control"></textarea>
-          <!-- <small *ngIf="message.invalid && message.touched" class="text-danger">
-            Message is Required(minimum length 10)</small> -->
-        </div>
-        <button
-          (click)="clicksub()"
-          [disabled]="exform.invalid"
-          type="button"
-          class="btn btn-primary"
-        >
-          Send message
-        </button>
-      </form>
+<!-- <div class="container">
+  
+    
+    <div class="image">
+        <button type="button" (click)="User()" class="btn">User</button>
+    <button  type="button" (click)="Admin()" class="btn">Admin</button>
+  
     </div>
+  
+</div> -->
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container" id="abc">
+  
+
+  <div class="w3-card-4 w3-dark-grey" style="width:50%">
+
+    <div class="w3-container w3-center">
+      
+      <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:80%">
+      <h5>John Doe</h5>
+
+      <div class="w3-section">
+        <button class="w3-button w3-green" type="button" (click)="User()">User Login</button>
+        <button class="w3-button w3-red" type="button" (click)="Admin()" >Admin Login</button>
+      </div>
+    </div>
+
   </div>
 </div>
