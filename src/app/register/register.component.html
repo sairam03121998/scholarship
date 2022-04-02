@@ -1,32 +1,49 @@
-<html lang="en">
-    <head>
-      <title>Register</title>
-    </head>
+
   <body>
     <div class="container">
-      <form action="">
+      
+        <form [formGroup] = "form" (ngSubmit)="register()">
+          
         <h1>Register</h1>
         <div class="form-group">
-        <label for="">FirstName</label>
-        <input type="text" class="form-control" required>
+        <label for="FirstName">FirstName</label>
+        <input type="text" class="form-control"  formControlName="FirstName" id="FirstName"/>
+        <div>
+          <small *ngIf="f['FirstName'].invalid && f['FirstName'].touched" class="text-danger">FirstName is required !</small>
+        </div> 
+        <div class="form-group">
+          <label for="LastName">LastName</label>
+          <input type="text" class="form-control"  formControlName="LastName" id="LastName"/>
+          <div>
+            <small *ngIf="f['LastName'].invalid && f['LastName'].touched" class="text-danger">LastName is required !</small>
+          </div> 
+          <div class="form-group">
+            <label for="StudentID">StudentID</label>
+            <input type="text" class="form-control"  formControlName="StudentID" id="StudentID"/>
+            <div>
+              <small *ngIf="f['StudentID'].invalid && f['StudentID'].touched" class="text-danger">StudentID is required !</small>
+            </div> 
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input type="email" class="form-control"  formControlName="Email" id="Email"/>
+              <div>
+                <small *ngIf="f['Email'].invalid && f['Email'].touched" class="text-danger">Email is required !</small>
+              </div>
+              <div class="form-group">
+                <label for="password">password</label>
+                <input type="passwordl" class="form-control"  formControlName="password" id="password"/>
+                <div>
+                  <small *ngIf="f['password'].invalid && f['password'].touched" class="text-danger">password is required !</small>
+                </div>
+                <div class="form-group">
+                  <label for="confirmpassword">confirm password</label>
+                  <input type="password" class="form-control"  formControlName="confirmpassword" id="confirmpassword"/>
+                  <div>
+                    <small *ngIf="f['confirmpassword'].invalid && f['confirmpassword'].touched" class="text-danger">password ans confirm password should be same!</small>
+                  </div>
+              
+              <!-- <input type="submit" class="btn" value="Register"> -->
+              <button [disabled]="form.invalid" class="btn">Register</button>
+            
       </div>
-      <div class="form-group">
-        <label for="">LastName</label>
-        <input type="text" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="">StudentID</label>
-        <input type="email" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="">EmailID</label>
-        <input type="email" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="">Password</label>
-        <input type="password" class="form-control" required>
-      </div>
-      <input type="submit" class="btn" value="Register">
-        </form>
-    </div>
-  </body>
+     

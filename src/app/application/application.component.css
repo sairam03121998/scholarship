@@ -57,3 +57,8 @@ body{
     opacity: .7;
 
 }
+.text-danger{
+    color: red;
+    font-size: 1rem;
+}
+ 

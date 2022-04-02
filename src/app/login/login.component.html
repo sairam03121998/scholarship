@@ -1,56 +1,28 @@
 <div class="container">
-  <form [formGroup]="form">
+  <form [formGroup] = "form" (ngSubmit)="login()">
     <h1>Student Login</h1>
-    <div class="form-group">
-      <label for="username">StudentID</label>
-      <input
-        type="text"
-        class="form-control"
-        name="username"
-        formControlName="username"
-        id="username"
-      />
+    
 
-      <div
-        *ngIf="
-          (username()?.touched || username()?.dirty) && username()?.invalid
-        "
-      >
-        <h6 class="alert text-danger" *ngIf="username()?.errors?.['required']">
-          Please Enter the Student ID.
-        </h6>
-        <h6
-          class="alert text-danger"
-          *ngIf="
-          username()?.errors?.['minlength'] ||
-          username()?.errors?.['maxlength']
-        "
-        >
-          Accepts 5 digit number
-        </h6>
+  <div class="form-group">
+    <label for="">StudentID</label>
+    <input type="text" class="form-control" formControlName="StudentID" id="StudentID"/>
+    <div >
+     
+      <small *ngIf="f['StudentID'].invalid && f['StudentID'].touched" class="text-danger">StudentID is incorrect !</small>
 
-        <h6 class="alert text-danger" *ngIf=" username()?.errors?.['pattern']">
-          Only accepts numbers
-        </h6>
-
-        <!-- <h6 class="alert text-danger" *ngIf="username.errors.maxlength">
-        Accepts Alphabets, space & Min 5 to Max 30 Char
-      </h6> -->
-      </div>
+    </div> 
     </div>
-
-    <br />
     <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="Password"
-        form-control-name="password"
-        class="form-control"
-      />
+      <label for="password">password</label>
+      <input type="password" class="form-control"  formControlName="password" id="password"/>
+  
+      <div  >
+       
+        <small *ngIf="f['password'].invalid && f['password'].touched" class="text-danger">please enter the correct password !</small>
+  
+      </div> 
     </div>
-    <input (click)="login()" class="btn" value="login" />
+     <button [disabled]="form.invalid" class="btn">Login</button>
     <div class="Register">Not a member?<a href="register">Register</a></div>
   </form>
 </div>

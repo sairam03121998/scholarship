@@ -1,0 +1,51 @@
+<div class="container">
+      <table style="width: 100%;">
+         <div class="row mt-3 mb-3">
+             <div class="col-md-8 mx-auto">
+                 <div class="card header card text-white bg-secondary">
+                     <div class="heading">
+                         <h2>Student Scholarship Approval</h2>
+                     </div>
+                </div>
+                    <tr>
+                        <th> Name </th>
+                        <th> Student ID </th>
+                        <th> 10th Percentage </th>
+                        <th> BE Percentage </th>
+                        <th> status </th>
+
+
+                    </tr>
+
+                    <tr *ngFor="let red of kim ">
+                        <td>{{red.name}}</td>  
+                        <td>{{red.studentId}}</td>
+                          <td>{{red._10thPercentage}}</td>
+                          <td>{{red.bePercentage}}</td>
+                          
+                          <td><button type="button" class="b1" (click) = "statusUpdate(red,true)">Approve</button>&nbsp;
+                          <button type="button" class="b2" (click) = "statusUpdate(red,false)">Reject</button></td>
+                      </tr>
+                 
+              
+          
+          </div>
+          </div>
+          <div class="button">
+            <input type="submit" routerLink="/demo" value="Back">
+            </div>
+        </table>
+          </div>
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  

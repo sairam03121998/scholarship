@@ -8,6 +8,9 @@ import { myRoutings } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 
@@ -16,13 +19,16 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     LoginComponent,
     myRoutings,
-         RegisterComponent
+         RegisterComponent,
+         AdminloginComponent,
+         AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

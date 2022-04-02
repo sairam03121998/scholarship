@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,39 +9,59 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  sai: any;
+  p: number=0;
+  constructor(public service:LoginService, private router:Router) {}
 
-  form: FormGroup;
+ 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      "username": new FormControl('', [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(5),
-        Validators.pattern('^[0-9]*$'),
-      ]),
-      "password": new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-      ]),
-    });
-    console.log(this.form.get("username"));
+    this.getLoginData();
+    
 
+   }
+   private getLoginData():void{
+    this.service.getLogin().subscribe(result=>
+     {
+       this.sai=result;
+     });
   }
-
-
-  public username(){
-    console.log(this.form.get("username")?.touched);
-
-    return this.form.get("username");
+   form = new FormGroup({
+    
+    StudentID: new FormControl('', [
+      Validators.required
+     
+      
+    ]),
+   password: new FormControl('',[
+     Validators.required,
+     
+   ])
+  });
+  get f(){  
+    return this.form.controls;
   }
-
-  
-  public password(){
-    return this.form.get("password");
-  }
-  
   login() {
     console.log(this.form.value);
+    for(let ram of this.sai)
+    {
+    if((this.form.value.StudentID==ram.studentId) && (this.form.value.password==ram.password))
+    {
+     this.p=1; 
+     break;  
+    }
+    else
+    {
+      alert("Invalid Login Details");
+    }
+  }
+  if(this.p==1){
+    alert("Login sucessfull");
+        this.router.navigate(['/home']); 
+        
+  }
+  else
+    {
+      alert("Invalid Login Details");
+    }
   }
 }
