@@ -13,11 +13,7 @@ export class AdmindashboardService {
   {
     return this.http.get(this.basepath);
   }
-  public UpdateStatusData(obj:any,status:Boolean){
-    if (status) {obj.status="Approved"}
-    else{
-      obj.status="Rejected"
-    }
+  public UpdateStatusData(obj:any,index:number){
     return this.http.put(this.basepath+"/"+obj.studentId,obj)
   }
 }

@@ -16,12 +16,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   // { path: 'demo', component: DemoComponent},
   { path: '', component: DemoComponent },
-  { path: 'adminlogin', component: AdminloginComponent},
-  { path: 'admindashboard', component: AdmindashboardComponent}
+  { path: 'adminlogin', component: AdminloginComponent },
+  { path: 'admindashboard', component: AdmindashboardComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
@@ -32,5 +32,5 @@ export const myRoutings = [
   ApplicationComponent,
   RegisterComponent,
   AdminloginComponent,
-  AdmindashboardComponent
+  AdmindashboardComponent,
 ];
