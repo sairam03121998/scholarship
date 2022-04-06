@@ -18,16 +18,6 @@ export class AdmindashboardService {
     else{
       obj.status="Rejected"
     }
-    return this.http.put(this.basepath+"/"+obj.studentId,obj).subscribe(data =>
-      {
-        if(status){
-          console.log(data);
-          alert("Approved");
-        }
-        else{
-          console.log(data);
-          alert("Rejected")
-        }
-      });
+    return this.http.put(this.basepath+"/"+obj.studentId,obj)
   }
 }

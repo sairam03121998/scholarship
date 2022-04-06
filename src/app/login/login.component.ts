@@ -49,10 +49,10 @@ export class LoginComponent implements OnInit {
      this.p=1; 
      break;  
     }
-    else
-    {
-      alert("Invalid Login Details");
-    }
+    // else
+    // {
+    //   alert("Invalid Login Details");
+    // }
   }
   if(this.p==1){
     alert("Login sucessfull");

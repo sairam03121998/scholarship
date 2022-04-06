@@ -27,10 +27,8 @@ export class ApplicationComponent implements OnInit {
       
     ]),
     StudentID: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-      Validators.maxLength(5),
-      Validators.pattern('^[0-9]*$'),
+      Validators.required
+     
     ]),
     ten: new FormControl('', [
       Validators.required,
@@ -50,13 +48,19 @@ export class ApplicationComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    var x = this.form.value.StudentID;
+    var y: number = +x;
+    var a = this.form.value.ten;
+    var b: number = +a;
+    var c = this.form.value.BE;
+    var d: number = +c;
     var body={
     
       name: this.form.value.Name, 
-      studentId: this.form.value.StudentID,
-      _10thPercentage: this.form.value.ten,
-      bePercentage: this.form.value.BE,
-      status: true
+      studentId: y,
+      _10thPercentage: a,
+      bePercentage: c,
+      status: "true"
   
     };
    

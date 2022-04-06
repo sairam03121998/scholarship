@@ -22,7 +22,12 @@ export class AdmindashboardComponent implements OnInit {
   }
 
    public statusUpdate( kimdata:any,statusname:Boolean){
-       this.service.UpdateStatusData(kimdata,statusname);
+       this.service.UpdateStatusData(kimdata,statusname)
+       .subscribe(data =>
+        {
+          console.log(data);
+        });
+
   
      }
     }
